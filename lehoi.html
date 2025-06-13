@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lễ hội - Huế Mộng Mơ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background: #5a62d6;
+      color: #fff;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .navbar .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar ul li {
+      margin-left: 25px;
+    }
+    .navbar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .navbar ul li a:hover {
+      color: #ffd700;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 32px 24px;
+    }
+    .breadcrumb {
+      font-size: 1rem;
+      margin-bottom: 18px;
+      color: #6b7280;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .breadcrumb a {
+      color: #1ca672;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover {
+      color: #4e54c8;
+      text-decoration: underline;
+    }
+    .breadcrumb .current {
+      color: #6b7280;
+      font-weight: 400;
+    }
+    .breadcrumb span {
+      color: #6b7280;
+      margin: 0 2px;
+    }
+    h1 {
+      color: #15395b;
+      font-size: 2.1rem;
+      margin-bottom: 24px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+    .tour-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 10px;
+    }
+    .tour-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #0001;
+      width: calc(33.333% - 18.7px);
+      min-width: 270px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .tour-card:hover {
+      box-shadow: 0 8px 24px #4e54c822;
+      transform: translateY(-4px) scale(1.02);
+    }
+    .tour-img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+    }
+    .tour-info {
+      padding: 18px 16px 16px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .tour-title {
+      font-size: 1.15rem;
+      color: #4e54c8;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .tour-desc {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .tour-price {
+      color: #e67e22;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .tour-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 18px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+      text-align: center;
+    }
+    .tour-btn:hover {
+      background: #ffd700;
+      color: #4e54c8;
+    }
+    @media (max-width: 900px) {
+      .tour-list { flex-direction: column; gap: 18px; }
+      .tour-card { width: 100%; min-width: unset; }
+      .container { padding: 12px 4px; }
+    }
+    .footer {
+            background: #4e54c8;
+            color: #fff;
+            padding: 30px 0 15px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+        .footer .social {
+            margin: 10px 0 0 0;
+        }
+        .footer .social a {
+            color: #ffd700;
+            margin: 0 10px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer .social a:hover {
+            color: #fff;
+        }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo"><a href="index.html" style="color:inherit;text-decoration:none;">Huế Mộng Mơ</a></div>
+    <ul>
+       <li><a href="index.html" id="btnTrangChu">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li><a href="tour.html">Tour</a></li>
+            <li><a href="diemden.html">Điểm đến</a></li>
+            <li><a href="amthuc.html">Ẩm thực</a></li>
+            <li><a href="lehoi.html">Lễ hội</a></li>
+            <li><a href="luutru.html">Lưu trú</a></li>
+            <li><a href="meodulich.html">Mẹo du lịch</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="lienhe.html">Liên hệ</a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html">Trang chủ</a>
+      <span>›</span>
+      <span class="current">Lễ hội Huế
+      </span>
+    </nav>
+    <h1>Các lễ hội nổi bật tại Huế</h1>
+    <div class="tour-list">
+      <!-- Tour 1 -->
+      <div class="tour-card">
+        <img class="tour-img" src="https://hnm.1cdn.vn/2025/03/15/hanoimoi.com.vn-uploads-images-thanhthuynguyen-2023-03-24-_le-hoi-mua-ha.jpg" alt="Festival Huế">
+        <div class="tour-info">
+          <div class="tour-title">Festival Huế</div>
+          <div class="tour-desc">Đây là lễ hội văn hóa lớn nhất và nổi tiếng nhất của Huế. Lễ hội quy tụ các hoạt động nghệ thuật, âm nhạc, múa, và các chương trình giao lưu văn hóa giữa các quốc gia.</div>
+          <div class="tour-price">Đã kết thúc</div>
+          <a href="festival.html" class="tour-btn">Xem chi tiết</a>
+        </div>
+      </div>
+      <!-- Tour 2 -->
+      <div class="tour-card">
+        <img class="tour-img" src="https://media1.nguoiduatin.vn/thumb_x992x595/media/le-cong-thanh/2022/11/10/hue-nguoi-duatin23.jpeg" alt="Đèn hoa đăng">
+        <div class="tour-info">
+          <div class="tour-title">Lễ Phật Đản</div>
+          <div class="tour-desc">Được tổ chức để kỷ niệm ngày sinh, ngày đắc đạo và ngày nhập niết bàn của Đức Phật Thích Ca Mâu Ni.</div>
+          <div class="tour-price">Đã kết thúc</div>
+          <a href="lephatdan.html" class="tour-btn">Xem chi tiết</a>
+        </div>
+      </div>
+      <!-- Tour 3 -->
+      <div class="tour-card">
+        <img class="tour-img" src="https://www.homepaylater.vn/static/896c667e138171ff957e82f9014daf4f/8679a/1_tim_hieu_ve_hoi_dua_ghe_truyen_thong_86659e203d.webp" alt="Đua Thuyền">
+        <div class="tour-info">
+          <div class="tour-title">Lễ hội đua thuyền trên sông Hương</div>
+          <div class="tour-desc">Đây là dịp để người dân và du khách chiêm ngưỡng những chiếc thuyền rồng, thuyền đua lướt nhanh trên sông Hương, tạo nên một cảnh tượng đầy màu sắc và hấp dẫn..</div>
+          <div class="tour-price">Đã kết thúc</div>
+          <a href="duathuyen.html" class="tour-btn">Xem chi tiết</a>
+        </div>
+      </div>
+      <!-- Tour 4 -->
+      <div class="tour-card">
+        <img class="tour-img" src="https://reviewvilla.vn/wp-content/uploads/2023/05/le-hoi-hue-11.jpg" alt="Hội vật">
+        <div class="tour-info">
+          <div class="tour-title">Hội vật làng Sình</div>
+          <div class="tour-desc">Một trong những lễ hội Huế có niên đại lâu đời và mang đậm tinh thần thượng võ của người dân nơi đây. Lễ hội thường được tổ chức vào ngày 10 tháng giêng.</div>
+          <div class="tour-price">Đã kết thúc</div>
+          <a href="langsinh.html" class="tour-btn">Xem chi tiết</a>
+        </div>
+      </div>
+      <!-- Tour 5 -->
+      <div class="tour-card">
+        <img class="tour-img" src="https://ddk.1cdn.vn/2024/09/24/z5860706694362_b31eec6317050afff755705d3934fa29.jpg" alt="Lễ hội áo dài Huế">
+        <div class="tour-info">
+          <div class="tour-title">Lễ hội áo dài Huế</div>
+          <div class="tour-desc">Ngắm nhìn những bộ áo dài được thiết kế tinh xảo từ các nghệ nhân.</div>
+          <div class="tour-price"> Coming soon </div>
+         <a href="aodai.html" class="tour-btn">Xem chi tiết</a>
+        </div>
+      </div>
+      <!-- Tour 6 -->
+      <div class="tour-card">
+        <img class="tour-img" src="https://mia.vn/media/uploads/blog-du-lich/Le-hoi-den-huyen-tran-cong-chua-le-hoi-tuong-nho-cac-bac-tien-nhan-tai-thua-thien-hue-04-1638093194.jpg" alt="Đền Huyền Trân Công Chúa">
+        <div class="tour-info">
+          <div class="tour-title">Lễ hội Đền Huyền Trân Công Chúa</div>
+          <div class="tour-desc"> Lễ hội tưởng nhớ công chúa Huyền Trân – người đã góp phần mở mang bờ cõi Đại Việt vào đất Chăm (Châu Ô, Châu Lý – tức Thừa Thiên Huế ngày nay).
+
+</div>
+          <div class="tour-price">Đã kết thúc</div>
+          <a href="huyentrancongchua.html" class="tour-btn">Xem chi tiết</a>
+        </div>
+      </div>
+    </div>
+  </div><div class="footer">
+        <div>© 2024 Huế Mộng Mơ</div>
+        <div class="social">
+            <a href="https://www.facebook.com/huy.ki.99?locale=vi_VN" title="Facebook"><span>🌐</span></a>
+            <a href="https://www.instagram.com/kiikii_996/" title="Instagram"><span>📸</span></a>
+        </div>
+    </div>
+</body>
+</html>

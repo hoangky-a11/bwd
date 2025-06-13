@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huế Mộng Mơ - Cổng thông tin du lịch Huế</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f6fa;
+            color: #222;
+        }
+        .navbar {
+            background: #4e54c8;
+            color: #fff;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .navbar .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ul li {
+            margin-left: 25px;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .navbar ul li a:hover {
+            color: #ffd700;
+        }
+        .banner {
+            background: url('https://huesmiletravel.com.vn/images/anh_hue_ve_dem.jpg') center/cover no-repeat;
+            height: 380px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 2px 2px 8px #333;
+            position: relative;
+        }
+        .banner h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: bold;
+        }
+        .banner p {
+            font-size: 1.3rem;
+            margin: 18px 0 30px 0;
+        }
+        .search-box {
+            background: rgba(255,255,255,0.9);
+            border-radius: 30px;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            background: transparent;
+            padding: 8px 10px;
+            width: 220px;
+        }
+        .search-box button {
+            background: #4e54c8;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 18px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background 0.2s;
+        }
+        .search-box button:hover {
+            background: #ffd700;
+            color: #4e54c8;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            font-size: 2rem;
+            color: #4e54c8;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .categories {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        .category {
+            flex: 1 1 180px;
+            min-width: 180px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(78,84,200,0.08);
+            text-align: center;
+            padding: 25px 10px 18px 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .category:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(78,84,200,0.18);
+        }
+        .category img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 12px;
+            border: 2px solid #4e54c8;
+        }
+        .category span {
+            display: block;
+            font-size: 1.1rem;
+            color: #4e54c8;
+            font-weight: 600;
+        }
+        .featured, .accommodation-list, .festival-list, .tips-list {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .featured-item, .accommodation-item, .festival-item, .tip-item {
+            flex: 1 1 350px;
+            min-width: 280px;
+            background: #f8f9fd;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(78,84,200,0.08);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .featured-item:hover, .accommodation-item:hover, .festival-item:hover, .tip-item:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(78,84,200,0.18);
+        }
+        .featured-item img, .accommodation-item img, .festival-item img, .tip-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .featured-item .info, .accommodation-item .info, .festival-item .info, .tip-item .info {
+            padding: 18px 15px 15px 15px;
+        }
+        .featured-item .info h3, .accommodation-item .info h3, .festival-item .info h3, .tip-item .info h3 {
+            margin: 0 0 10px 0;
+            color: #4e54c8;
+            font-size: 1.2rem;
+        }
+        .featured-item .info p, .accommodation-item .info p, .festival-item .info p, .tip-item .info p {
+            margin: 0;
+            color: #444;
+            font-size: 1rem;
+        }
+        .blog-section {
+            margin-bottom: 40px;
+        }
+        .blog-list {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .blog-card {
+            flex: 1 1 350px;
+            min-width: 280px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(78,84,200,0.08);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(78,84,200,0.18);
+        }
+        .blog-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+        .blog-card .info {
+            padding: 15px 15px 12px 15px;
+        }
+        .blog-card .info h4 {
+            margin: 0 0 8px 0;
+            color: #4e54c8;
+            font-size: 1.1rem;
+        }
+        .blog-card .info p {
+            margin: 0;
+            color: #444;
+            font-size: 0.98rem;
+        }
+        .contact-section {
+            padding: 30px 20px;
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 100%;
+            float: left;      
+            clear: both;
+        }
+        .contact-section h3 {
+            color: #4e54c8;
+            margin-top: 0;
+                text-align: left;
+        }
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+        }
+        .contact-section input, .contact-section textarea {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+        .contact-section button {
+            background: #4e54c8;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 0;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-section button:hover {
+            background: #ffd700;
+            color: #4e54c8;
+        }
+        .footer {
+            background: #4e54c8;
+            color: #fff;
+            padding: 30px 0 15px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+        .footer .social {
+            margin: 10px 0 0 0;
+        }
+        .footer .social a {
+            color: #ffd700;
+            margin: 0 10px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer .social a:hover {
+            color: #fff;
+        }
+        @media (max-width: 900px) {
+            .categories, .featured, .blog-list, .accommodation-list, .festival-list, .tips-list {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .category, .featured-item, .blog-card, .accommodation-item, .festival-item, .tip-item {
+                width: 100%;
+                min-width: unset;
+            }
+        }
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 5px;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar ul li {
+                margin: 8px 0 0 0;
+            }
+            .banner {
+                height: 180px;
+            }
+            .banner h1 {
+                font-size: 1.5rem;
+            }
+            .container {
+                padding: 0 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+    <div class="logo" id="logoTrangChu" style="cursor:pointer;">Huế Mộng Mơ</div>
+    <ul>
+            <li><a href="index.html" id="btnTrangChu">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li><a href="tour.html">Tour</a></li>
+            <li><a href="diemden.html">Điểm đến</a></li>    
+            <li><a href="amthuc.html">Ẩm thực</a></li>
+            <li><a href="lehoi.html">Lễ hội</a></li>
+            <li><a href="luutru.html">Lưu trú</a></li>
+            <li><a href="meodulich.html">Mẹo du lịch</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Đăng ký</a></li>
+
+        </ul>
+    </div>
+    <div class="banner">
+        <h1>Khám phá Huế - Di sản & Hiện đại</h1>
+        <p>Trải nghiệm văn hóa, lịch sử, ẩm thực và thiên nhiên tuyệt đẹp của xứ Huế mộng mơ</p>
+       <form class="search-box" onsubmit="searchContent(); return false;">
+   
+       
+
+
+  <form class="search-box">
+    <input type="text" id="searchInput" placeholder="Tìm kiếm tour, điểm đến, món ăn...">
+    <button type="submit">Tìm kiếm</button>
+</form>
+
+<script>
+// Dữ liệu mẫu
+const data = [
+    { name: "Kinh thành Huế", url: "tour-kinhthanh.html" }, 
+    { name: "Lăng Tự Đức", url: "langtuduc.html" },
+    { name: "Huyền trân công chúa", url: "huyentrancongchua.html" },
+    { name: "Ẩm thực Cơm Hến", url: "comhen.html" },
+    { name: "Lễ hội Festival Huế", url: "tour-festival.html" },
+    { name: "Biển Lăng Cô", url: "tour-langco.html" },
+    { name: "Sông Hương", url: "songhuong.html" },
+    { name: "Bún bò Huế", url: "bunbohue.html" },
+    { name: "Chợ Đông Ba", url: "chodoingba.html" },
+    { name: "Cố đô Huế", url: "codo.html" },
+    { name: "Lễ hội điện Hòn Chén", url: "dienhonchen.html" },
+    { name: "Lễ hội áo dài Huế", url: "aodai.html" } 
+
+];
+
+document.querySelector('.search-box').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const keyword = document.getElementById('searchInput').value.trim().toLowerCase();
+
+    const results = data.filter(item => item.name.toLowerCase().includes(keyword));
+
+    if (results.length > 0) {
+        window.location.href = results[0].url;
+    } else {
+        alert("Không tìm thấy kết quả phù hợp.");
+    }
+});
+</script>
+  
+
+
+
+    </div>
+    <div class="container">
+    
+        <!-- Chuyên mục nổi bật -->
+        <div class="section-title">Chuyên mục nổi bật</div>
+        <div class="categories">
+    <div class="categories">
+    <div class="categories">
+    <a href="tour.html" class="category" style="text-decoration:none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Tour">
+        <span>Tour du lịch</span>
+    </a>
+    <a href="diemden.html" class="category" style="text-decoration:none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Điểm đến">
+        <span>Điểm tham quan</span>
+    </a>
+    <a href="cafe.html" class="category" style="text-decoration:none;">
+        <img src="https://img.freepik.com/vetores-premium/vetor-de-xicara-de-cafe-plana_806257-315.jpg" alt="Coffe">
+        <span>Coffee shop</span>
+    </a>
+    <a href="amthuc.html" class="category" style="text-decoration:none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Ẩm thực">
+        <span>Ẩm thực Huế</span>
+    </a>
+    <a href="lehoi.html" class="category" style="text-decoration:none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" alt="Lễ hội">
+        <span>Lễ hội & Sự kiện</span>
+    </a>
+    <a href="luutru.html" class="category" style="text-decoration:none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/235/235861.png" alt="Lưu trú">
+        <span>Lưu trú</span>
+    </a>
+    <a href="meodulich.html" class="category" style="text-decoration:none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Mẹo du lịch">
+        <span>Mẹo du lịch</span>
+    </a>
+    <a href="blog.html" class="category" style="text-decoration:none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Blog">
+        <span>Blog du lịch</span>
+    </a>
+</div>
+</div>
+        <!-- Lễ hội & Sự kiện -->
+        <div class="section-title">Lễ hội & Sự kiện nổi bật </div>
+        <div class="festival-list">
+            <div class="festival-item">
+                <a href="festival.html" style="text-decoration:none; color:inherit;">
+    <div class="festival-item">
+        <img src="https://dntt.mediacdn.vn/197608888129458176/2024/5/30/2024-5-20-festival2024-3-1716555011326313942103-17170421589061017656828.jpg" alt="Festival Huế">
+        <div class="info">
+            <h3>Festival Huế</h3>
+            <p>Lễ hội văn hóa nghệ thuật lớn nhất cố đô, quy tụ các chương trình biểu diễn, diễu hành, nghệ thuật đường phố đặc sắc.</p>
+        </div>
+    </div>
+</a>
+            </div>
+            <div class="festival-item">
+                <a href="dienhonchen.html" style="text-decoration:none; color:inherit;">
+    <div class="festival-item">
+        <img src="https://thanhnien.mediacdn.vn/Uploaded/longbn/2022_04_04/img-2900-7039.jpg" alt="Lễ hội điện Hòn Chén">
+        <div class="info">
+            <h3>Lễ hội điện Hòn Chén</h3>
+            <p>Lễ hội tâm linh truyền thống trên sông Hương, mang đậm nét văn hóa dân gian xứ Huế.</p>
+        </div>
+    </div>
+</a>
+            </div>
+            <div class="festival-item">
+                <a href="aodai.html" style="text-decoration:none; color:inherit;">
+    <div class="festival-item">
+        <img src="https://bcp.cdnchinhphu.vn/334894974524682240/2024/10/6/z5898140396912e4530205769bd3274687d0bd626291ee-1728204446824510989641.jpg" alt="Lễ hội áo dài">
+        <div class="info">
+            <h3>Lễ hội áo dài</h3>
+            <p>Tôn vinh vẻ đẹp áo dài truyền thống Việt Nam qua các chương trình trình diễn và hoạt động cộng đồng.</p>
+        </div>
+    </div>
+</a>
+            </div>
+        </div>
+
+        <!-- Tour nổi bật -->
+        <div class="section-title">Tour nổi bật</div>
+        <div class="featured">
+            <div class="featured-item">
+                <a href="tour-kinhthanh.html" style="text-decoration:none; color:inherit;">
+    <div class="featured-item">
+        <img src="https://mia.vn/media/uploads/blog-du-lich/kinh-thanh-hue-chiem-nguong-kien-truc-vang-son-cua-13-vi-vua-trieu-dai-nha-nguyen-08-1638156842.jpg" alt="Kinh thành Huế">
+        <div class="info">
+            <h3>Khám phá Kinh thành Huế</h3>
+            <p>Tour tham quan Đại Nội, lăng tẩm, chùa Thiên Mụ, trải nghiệm áo dài truyền thống.</p>
+        </div>
+    </div>
+</a>
+            </div>
+            <div class="featured-item">
+                <a href="tour-tamgiang.html" style="text-decoration:none; color:inherit;">
+    <div class="featured-item">
+        <img src="https://ik.imagekit.io/tvlk/blog/2023/08/pha-tam-giang-7.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" alt="Sông nước Tam Giang">
+        <div class="info">
+            <h3>Sông nước Tam Giang</h3>
+            <p>Du ngoạn phá Tam Giang, thưởng thức hải sản tươi ngon, ngắm hoàng hôn tuyệt đẹp.</p>
+        </div>
+    </div>
+</a>
+            </div>
+            <div class="featured-item">
+                <a href="tour-bachma.html" style="text-decoration:none; color:inherit;">
+    <div class="featured-item">
+        <img src="https://static.vinwonders.com/production/nui-bach-ma-hue-1.jpg" alt="Bạch Mã">
+        <div class="info">
+            <h3>Chinh phục Bạch Mã</h3>
+            <p>Khám phá vườn quốc gia Bạch Mã, trekking thác Đỗ Quyên, hòa mình vào thiên nhiên.</p>
+        </div>
+    </div>
+</a>
+            </div>
+        </div>
+
+        <!-- Điểm lưu trú -->
+        <div class="section-title">Điểm lưu trú nổi bật</div>
+        <div class="accommodation-list">
+            <div class="accommodation-item">
+                <img src="https://booking.muongthanh.com/images/brands/2019/05/15/original/hue_1557912100.jpg" alt="Khách sạn Mường Thanh">
+                <div class="info">
+                    <h3>Khách sạn Mường Thanh</h3>
+                    <p>Khách sạn 4 sao hiện đại, vị trí trung tâm, tiện nghi đầy đủ, view sông Hương tuyệt đẹp.</p>
+                </div>
+            </div>
+            <div class="accommodation-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_REPPYlQ3R6A5tDTMpT1dPfBrGppH-3tSfA&s" alt="Pilgrimage Village Resort">
+                <div class="info">
+                    <h3>Pilgrimage Village Resort</h3>
+                    <p>Khu nghỉ dưỡng xanh mát, phong cách làng quê, dịch vụ spa cao cấp, không gian yên bình.</p>
+                </div>
+            </div>
+            <div class="accommodation-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsqorunkKlGEdZ62qTl5lmlNw3cS5bjx9smQ&s">
+                <div class="info">
+                    <h3>Homestay Le Robinet</h3>
+                    <p>Homestay xinh xắn, gần trung tâm, giá hợp lý, phù hợp cho nhóm bạn trẻ và gia đình.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mẹo du lịch -->
+        <div class="section-title">Mẹo du lịch Huế</div>
+        <div class="tips-list">
+            <div class="tip-item">
+                <img src="https://www.vietnambooking.com/wp-content/uploads/2019/07/mua-hoa-phuong-hue-10072019-1.jpg" alt="Thời điểm du lịch">
+                <div class="info">
+                    <h3>Thời điểm lý tưởng</h3>
+                    <p>Tháng 3-8 là mùa đẹp nhất để du lịch Huế, thời tiết nắng nhẹ, ít mưa, thuận tiện tham quan.</p>
+                </div>
+            </div>
+            <div class="tip-item">
+                <img src="https://laque.vn/wp-content/uploads/2022/08/xich-lo-hue-3.jpg" alt="Di chuyển ở Huế">
+                <div class="info">
+                    <h3>Di chuyển thuận tiện</h3>
+                    <p>Thuê xe máy, xích lô hoặc đi bộ để khám phá các điểm du lịch trong thành phố.</p>
+                </div>
+            </div>
+            <div class="tip-item">
+                <img src="https://i.ytimg.com/vi/CSI9ildGX9s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCxhRIyoYY7k9ZuxY0YOC9jNFLapg"Ẩm thực Huế">
+                <div class="info">
+                    <h3>Thưởng thức ẩm thực</h3>
+                    <p>Đừng bỏ lỡ bún bò, bánh bèo, bánh khoái, chè Huế tại các quán ăn địa phương.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog du lịch -->
+        <div class="section-title">Blog du lịch mới nhất</div>
+        <div class="blog-section">
+            <div class="blog-list">
+                <div class="blog-card">
+                    <img src="https://rungduabaymau.vn/wp-content/uploads/2023/02/du-lich-hue-thang-2-dulichchat-dai-noi-6.jpeg" alt="">
+                    <div class="info">
+                        <h4>5 trải nghiệm không thể bỏ lỡ ở Huế</h4>
+                        <p>Tham quan Đại Nội, thưởng thức ẩm thực, nghe ca Huế trên sông Hương và nhiều hơn thế nữa...</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW1TmME3795do-uB1Ce42X3ZadjMN7iyC0bg&s" alt="">
+                    <div class="info">
+                        <h4>Ẩm thực Huế: Tinh hoa trong từng món ăn</h4>
+                        <p>Bún bò, bánh bèo, bánh khoái, chè Huế... Mỗi món ăn là một câu chuyện văn hóa đặc sắc.</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkCvhCd8rN5U1wuhw4wqh9zVOr4HE431_TWw&s">
+                    <div class="info">
+                        <h4>Lễ hội Festival Huế 2024</h4>
+                        <p>Festival Huế - nơi hội tụ văn hóa, nghệ thuật, di sản và những màn trình diễn đặc sắc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Liên hệ -->
+        <div class="section-title">Liên hệ</div>
+        <div class="contact-section">
+            <h3>Gửi thắc mắc hoặc góp ý cho chúng tôi</h3>
+            <form onsubmit="alert('Cảm ơn bạn đã gửi liên hệ!'); return false;">
+                <input type="text" placeholder="Họ và tên" required>
+                <input type="email" placeholder="Email" required>
+                <textarea rows="4" placeholder="Nội dung" required></textarea>
+                <button type="submit">Gửi liên hệ</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <div>© 2024 Huế Mộng Mơ</div>
+        <div class="social">
+            <a href="https://www.facebook.com/huy.ki.99?locale=vi_VN" title="Facebook"><span>🌐</span></a>
+            <a href="https://www.instagram.com/kiikii_996/" title="Instagram"><span>📸</span></a>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

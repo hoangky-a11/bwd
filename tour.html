@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour du lịch Huế - Huế Mộng Mơ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background: #5a62d6;
+      color: #fff;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .navbar .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar ul li {
+      margin-left: 25px;
+    }
+    .navbar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .navbar ul li a:hover {
+      color: #ffd700;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 32px 24px;
+    }
+    .breadcrumb {
+      font-size: 1rem;
+      margin-bottom: 18px;
+      color: #6b7280;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .breadcrumb a {
+      color: #1ca672;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover {
+      color: #4e54c8;
+      text-decoration: underline;
+    }
+    .breadcrumb .current {
+      color: #6b7280;
+      font-weight: 400;
+    }
+    .breadcrumb span {
+      color: #6b7280;
+      margin: 0 2px;
+    }
+    h1 {
+      color: #15395b;
+      font-size: 2.1rem;
+      margin-bottom: 24px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+    .tour-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 10px;
+    }
+    .tour-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #0001;
+      width: calc(33.333% - 18.7px);
+      min-width: 270px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .tour-card:hover {
+      box-shadow: 0 8px 24px #4e54c822;
+      transform: translateY(-4px) scale(1.02);
+    }
+    .tour-img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+    }
+    .tour-info {
+      padding: 18px 16px 16px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .tour-title {
+      font-size: 1.15rem;
+      color: #4e54c8;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .tour-desc {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .tour-price {
+      color: #e67e22;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .tour-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 18px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+      text-align: center;
+    }
+    .tour-btn:hover {
+      background: #ffd700;
+      color: #4e54c8;
+    }
+    @media (max-width: 900px) {
+      .tour-list { flex-direction: column; gap: 18px; }
+      .tour-card { width: 100%; min-width: unset; }
+      .container { padding: 12px 4px; }
+    }
+    .footer {
+            background: #4e54c8;
+            color: #fff;
+            padding: 30px 0 15px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+        .footer .social {
+            margin: 10px 0 0 0;
+        }
+        .footer .social a {
+            color: #ffd700;
+            margin: 0 10px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer .social a:hover {
+            color: #fff;
+        }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo"><a href="index.html" style="color:inherit;text-decoration:none;">Huế Mộng Mơ</a></div>
+    <ul>
+       <li><a href="index.html" id="btnTrangChu">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li><a href="tour.html">Tour</a></li>
+            <li><a href="diemden.html">Điểm đến</a></li>
+            <li><a href="amthuc.html">Ẩm thực</a></li>
+            <li><a href="lehoi.html">Lễ hội</a></li>
+            <li><a href="luutru.html">Lưu trú</a></li>
+            <li><a href="meodulich.html">Mẹo du lịch</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="lienhe.html">Liên hệ</a></li>
+    </ul>
+  </div>
+  <div class="container">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html">Trang chủ</a>
+      <span>›</span>
+      <span class="current">Tour du lịch Huế</span>
+    </nav>
+    <h1>Tour du lịch Huế nổi bật</h1>
+    <div class="tour-list">
+      <!-- Tour 1 -->
+      <div class="tour-card">
+        <img class="tour-img" src="https://ik.imagekit.io/tvlk/blog/2023/02/dai-noi-hue-1.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" alt="Kinh thành Huế">
+        <div class="tour-info">
+          <div class="tour-title">Khám phá Kinh thành Huế</div>
+          <div class="tour-desc">Tham quan Đại Nội, lăng tẩm, chùa Thiên Mụ, trải nghiệm áo dài truyền thống và nghe ca Huế trên sông Hương.</div>
+          <div class="tour-price">Giá: 950.000đ/người</div>
+          <a href="tour-kinhthanh.html" class="tour-btn">Xem chi tiết</a>
+        </div>
+      </div>
+      <!-- Tour 2 -->
+      <div class="tour-card">
+        <img class="tour-img" src="https://motogo.vn/wp-content/uploads/2023/10/pha-tam-giang-11.jpg" alt="Sông nước Tam Giang">
+        <div class="tour-info">
+          <div class="tour-title">Sông nước Tam Giang</div>
+          <div class="tour-desc">Du ngoạn phá Tam Giang, thưởng thức hải sản tươi ngon, ngắm hoàng hôn tuyệt đẹp trên đầm phá lớn nhất Đông Nam Á.</div>
+          <div class="tour-price">Giá: 790.000đ/người</div>
+          <a href="tour-tamgiang.html" class="tour-btn">Xem chi tiết</a>
+        </div>
+      </div>
+      <!-- Tour 3 -->
+      <div class="tour-card">
+        <img class="tour-img" src="https://cardo.htskys.com/wp-content/uploads/2022/04/BACH-MA-%E2%80%93-THUONG-UYEN-TROI-NAM.jpg" alt="Bạch Mã">
+        <div class="tour-info">
+          <div class="tour-title">Chinh phục Bạch Mã</div>
+          <div class="tour-desc">Khám phá vườn quốc gia Bạch Mã, trekking thác Đỗ Quyên, hòa mình vào thiên nhiên hoang sơ và không khí trong lành.</div>
+          <div class="tour-price">Giá: 1.150.000đ/người</div>
+          <a href="tour-bachma.html" class="tour-btn">Xem chi tiết</a>
+        </div>
+      </div>
+      <!-- Tour 4 -->
+      <div class="tour-card">
+        <img class="tour-img" src="https://ik.imagekit.io/tvlk/blog/2023/08/bien-lang-co-4.jpg" alt="Biển Lăng Cô">
+        <div class="tour-info">
+          <div class="tour-title">Biển Lăng Cô & Đầm Lập An</div>
+          <div class="tour-desc">Tận hưởng biển xanh cát trắng, check-in đầm Lập An, thưởng thức hải sản tươi sống và khám phá làng chài ven biển.</div>
+          <div class="tour-price">Giá: 850.000đ/người</div>
+          <a href="tour-langco.html" class="tour-btn">Xem chi tiết</a>
+        </div>
+      </div>
+      <!-- Tour 5 -->
+      <div class="tour-card">
+        <img class="tour-img" src="https://hnm.1cdn.vn/2024/09/18/5217223200825f2471954o-1668512179584326330393.jpg" alt="Lễ hội Festival Huế">
+        <div class="tour-info">
+          <div class="tour-title">Trải nghiệm Festival Huế</div>
+          <div class="tour-desc">Tham gia các hoạt động lễ hội, diễu hành, nghệ thuật đường phố, hòa mình vào không khí sôi động của Festival Huế.</div>
+          <div class="tour-price">Giá: 1.250.000đ/người</div>
+         <a href="tour-festival.html" class="tour-btn">Xem chi tiết</a>
+        </div>
+      </div>
+      <!-- Tour 6 -->
+      <div class="tour-card">
+        <img class="tour-img" src="https://cdn3.ivivu.com/2022/09/am-thuc-hue-ivivu-101.jpg" alt="Ẩm thực Huế">
+        <div class="tour-info">
+          <div class="tour-title">Ẩm thực & Đêm Huế</div>
+          <div class="tour-desc">Khám phá ẩm thực cung đình, thưởng thức các món đặc sản Huế, dạo phố đêm và nghe ca Huế trên sông Hương.</div>
+          <div class="tour-price">Giá: 690.000đ/người</div>
+          <a href="tour-amthuc.html" class="tour-btn">Xem chi tiết</a>
+        </div>
+      </div>
+    </div>
+  </div><div class="footer">
+        <div>© 2024 Huế Mộng Mơ</div>
+        <div class="social">
+            <a href="https://www.facebook.com/huy.ki.99?locale=vi_VN" title="Facebook"><span>🌐</span></a>
+            <a href="https://www.instagram.com/kiikii_996/" title="Instagram"><span>📸</span></a>
+        </div>
+    </div>
+</body>
+</html>

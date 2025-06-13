@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Kết quả tìm kiếm</title>
+</head>
+<body>
+  <h1>Kết quả tìm kiếm</h1>
+  <div id="result"></div>
+
+  <script>
+    // Lấy từ khóa từ URL
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("query");
+
+    // Giả sử dữ liệu địa danh có sẵn
+    const diaDanh = [
+      "Kinh thành Huế",
+      "Chùa Thiên Mụ",
+      "Đại Nội",
+      "Sông Hương",
+      "Cầu Trường Tiền"
+    ];
+
+    const resultDiv = document.getElementById("result");
+
+    if (query) {
+      const results = diaDanh.filter(d => d.toLowerCase().includes(query.toLowerCase()));
+      if (results.length > 0) {
+        resultDiv.innerHTML = "<ul>" + results.map(r => `<li>${r}</li>`).join("") + "</ul>";
+      } else {
+        resultDiv.textContent = "Không tìm thấy kết quả nào.";
+      }
+    } else {
+      resultDiv.textContent = "Vui lòng nhập từ khóa tìm kiếm.";
+    }
+  </script>
+</body>
+</html>

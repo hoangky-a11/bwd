@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ẩm thực Huế</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f1eff2;
+            margin: 0;
+            color: #222;
+        }
+        .navbar {
+            background: #4e54c8;
+            color: #fff;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .navbar .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ul li {
+            margin-left: 25px;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .navbar ul li a:hover {
+            color: #ffd700;
+        }
+        .breadcrumb {
+            font-size: 0.95rem;
+            margin: 20px 0 0 0;
+            padding: 0 30px;
+            color: #666;
+        }
+        .breadcrumb a {
+            color: #0a0ae0;
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            margin: 0 6px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 32px;
+        }
+        .section-title {
+            font-size: 1.7rem;
+            color: #4e54c8;
+            margin-top: 0;
+            margin-bottom: 28px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .food-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+        .food-item {
+            background: #f8f8fb;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(78,84,200,0.08);
+            width: 320px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+        .food-item:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(78,84,200,0.18);
+        }
+        .food-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .food-info {
+            padding: 18px 15px 15px 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .food-info h3 {
+            margin: 0 0 10px 0;
+            color: #4e54c8;
+            font-size: 1.2rem;
+        }
+        .food-info p {
+            margin: 0 0 10px 0;
+            color: #444;
+            font-size: 1rem;
+            flex: 1;
+        }
+        .food-info a {
+            color: #4e54c8;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        .footer {
+            background: #4e54c8;
+            color: #fff;
+            padding: 30px 0 15px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+        .footer .social {
+            margin: 10px 0 0 0;
+        }
+        .footer .social a {
+            color: #ffd700;
+            margin: 0 10px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer .social a:hover {
+            color: #fff;
+        }
+        @media (max-width: 900px) {
+            .food-list {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+            .food-item {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Huế Mộng Mơ</div>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li><a href="tour.html">Tour</a></li>
+            <li><a href="diemden.html">Điểm đến</a></li>
+            <li><a href="amthuc.html" style="color:#ffd700;">Ẩm thực</a></li>
+            <li><a href="lehoi.html">Lễ hội</a></li>
+            <li><a href="luutru.html">Lưu trú</a></li>
+            <li><a href="meodulich.html">Mẹo du lịch</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="lienhe.html">Liên hệ</a></li>
+        </ul>
+    </div>
+
+    <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> <span>&gt;</span> <span>Ẩm thực Huế</span>
+    </div>
+
+    <div class="container">
+        <div class="section-title">Ẩm thực Huế - Tinh hoa xứ cố đô</div>
+        <div class="food-list">
+
+            <div class="food-item">
+                <img src="https://khamphahue.com.vn/Portals/0/Medias/Nam2023/T2/Khamphahue-banh-ep-Gia-Di7.jpg" alt="Bánh ép Huế">
+                <div class="food-info">
+                    <h3>Bánh ép</h3>
+                    <p>Khi nhắc đến ẩm thực đường phố Huế, ngoài chè, bánh bột lọc, nem lụi... thì không thể bỏ qua món bánh ép — một món ăn vặt quen thuộc, gần gũi với học sinh, sinh viên và người dân xứ Huế.</p>
+                   
+                    <a href="banhep.html">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="https://storage.googleapis.com/onelife-public/blog.onelife.vn/2021/11/cach-lam-banh-beo-chen-mien-trung-banh-banh-ngot-915714425210.jpg" alt="Bánh ép Huế">
+                <div class="food-info">
+                    <h3>Bánh ép Huế</h3>
+            <p>Khi nhắc đến ẩm thực đường phố Huế, ngoài chè, bánh bột lọc, nem lụi... thì không thể bỏ qua món bánh ép — một món ăn vặt quen thuộc, gần gũi với học sinh, sinh viên và người dân xứ Huế.
+                    <a href="banhep.html">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <div class="food-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2U3UUqgEC5nut2XWQNnipfl50gOUdEtvdkw&s" alt="Bánh khoái Huế">
+                <div class="food-info">
+                    <h3>Bánh khoái Huế</h3>
+                    <p>Bánh chiên giòn rụm, nhân tôm thịt, giá đỗ, ăn kèm nước lèo đặc biệt và rau sống.</p>
+                    <a href="banhkhoai.html">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <div class="food-item">
+                <img src="https://banhlochuebavan.com/wp-content/uploads/2023/04/banh-loc-hue-ba-van-sau-khi-hap-1024x1024-1.jpg" alt="Bánh lọc Huế">
+                <div class="food-info">
+                    <h3>Bánh lọc Huế</h3>
+                    <p>Bánh trong suốt, nhân tôm thịt, gói lá chuối, hấp hoặc luộc, ăn kèm nước mắm cay.</p>
+                    <a href="banhloc.html">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <div class="food-item">
+                <img src="https://nethue.com.vn/uploaded/Tin%20tuc/tin-tuc-nguongoc-1.jpg" alt="Cơm hến Huế">
+                <div class="food-info">
+                    <h3>Cơm hến Huế</h3>
+                    <p>Cơm trộn hến xào, tóp mỡ, rau thơm, đậu phộng, bánh tráng, nước hến cay nồng.</p>
+                    <a href="comhen.html">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <div class="food-item">
+                <img src="https://statics.vinpearl.com/banh-canh-nam-pho-00_1631516648.jpg" alt="Bánh canh Nam Phổ">
+                <div class="food-info">
+                    <h3>Bánh canh Nam Phổ</h3>
+                    <p>Nước dùng sánh sệt, ngọt thanh được nấu từ tôm tươi, thịt heo bằm nhuyễn và huyết heo.</p>
+                    <a href="banhcanh.html">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <div class="food-item">
+                <img src="https://cdn.tgdd.vn/2022/08/CookDish/cach-lam-hot-vit-lon-om-bau-bo-duong-thom-ngon-don-gian-cho-avt-1200x676.jpg" alt="Vịt um bầu">
+                <div class="food-info">
+                    <h3>Vịt um bầu</h3>
+                    <p>Thịt vịt om mềm cùng bầu non, nước dùng ngọt dịu, thanh mát và đậm đà hương vị quê hương.</p>
+                    <a href="vitumbau.html">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <div class="food-item">
+                <img src="https://khamphahue.com.vn/Portals/0/Medias/Nam2024/T6/Khamphahue_CheGanhChoDongBa.jpg" alt="Chè Huế">
+                <div class="food-info">
+                    <h3>Chè Huế</h3>
+                    <p>Đủ loại chè: chè bắp, chè hạt sen, chè đậu ngự, chè khoai tía... ngọt thanh, mát lành.</p>
+                    <a href="chehue.html">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <div class="food-item">
+                <img src="https://khamphahue.com.vn/Portals/0/Medias/Nam2023/T2/Khamphahue-banh-ep-Gia-Di7.jpg" alt="Bánh ép Huế">
+                <div class="food-info">
+                    <h3>Bánh ép huế</h3>
+                    <p>Cuốn cùng rau dưa chấm với nước mắm ngon bá cháy.</p>
+                    <a href="banhep.html">Xem chi tiết</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>© 2024 Huế Mộng Mơ</div>
+        <div class="social">
+            <a href="https://www.facebook.com/huy.ki.99?locale=vi_VN" title="Facebook" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/kiikii_996/" title="Instagram" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@sieudepchaiiiii?lang=vi-VN" title="TikTok" target="_blank">TikTok</a>
+        </div>
+    </div>
+</body>
+</html>

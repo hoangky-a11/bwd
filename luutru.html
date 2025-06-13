@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lưu trú</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background: #5a62d6;
+      color: #fff;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .navbar .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar ul li {
+      margin-left: 25px;
+    }
+    .navbar ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .navbar ul li a:hover {
+      color: #ffd700;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 32px 24px;
+    }
+    .breadcrumb {
+      font-size: 1rem;
+      margin-bottom: 18px;
+      color: #6b7280;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .breadcrumb a {
+      color: #1ca672;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover {
+      color: #4e54c8;
+      text-decoration: underline;
+    }
+    .breadcrumb .current {
+      color: #6b7280;
+      font-weight: 400;
+    }
+    .breadcrumb span {
+      color: #6b7280;
+      margin: 0 2px;
+    }
+    h1 {
+      color: #15395b;
+      font-size: 2.1rem;
+      margin-bottom: 24px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+    .tour-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 10px;
+    }
+    .tour-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #0001;
+      width: calc(33.333% - 18.7px);
+      min-width: 270px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .tour-card:hover {
+      box-shadow: 0 8px 24px #4e54c822;
+      transform: translateY(-4px) scale(1.02);
+    }
+    .tour-img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+    }
+    .tour-info {
+      padding: 18px 16px 16px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .tour-title {
+      font-size: 1.15rem;
+      color: #4e54c8;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .tour-desc {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .tour-price {
+      color: #e67e22;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .tour-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 18px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+      text-align: center;
+    }
+    .tour-btn:hover {
+      background: #ffd700;
+      color: #4e54c8;
+    }
+    @media (max-width: 900px) {
+      .tour-list { flex-direction: column; gap: 18px; }
+      .tour-card { width: 100%; min-width: unset; }
+      .container { padding: 12px 4px; }
+    }
+    .footer {
+            background: #4e54c8;
+            color: #fff;
+            padding: 30px 0 15px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+        .footer .social {
+            margin: 10px 0 0 0;
+        }
+        .footer .social a {
+            color: #ffd700;
+            margin: 0 10px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer .social a:hover {
+            color: #fff;
+        }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo"><a href="index.html" style="color:inherit;text-decoration:none;">Huế Mộng Mơ</a></div>
+    <ul>
+       <li><a href="index.html" id="btnTrangChu">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li><a href="tour.html">Tour</a></li>
+            <li><a href="diemden.html">Điểm đến</a></li>
+            <li><a href="amthuc.html">Ẩm thực</a></li>
+            <li><a href="lehoi.html">Lễ hội</a></li>
+            <li><a href="luutru.html">Lưu trú</a></li>
+            <li><a href="meodulich.html">Mẹo du lịch</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="lienhe.html">Liên hệ</a></li>
+    </ul>
+  </div>
+<div class="container">
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="index.html">Trang chủ</a>
+    <span>›</span>
+    <span class="current">Lưu trú tại Huế</span>
+  </nav>
+  <h1>Địa điểm lưu trú nổi bật tại Huế</h1>
+  <div class="tour-list">
+    <!-- Lưu trú 1 -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://du-lich.chudu24.com/f/m/2105/28/khach-san-indochine-palace-hue-4.jpg?w=800&h=500" alt="Khách sạn Indochine Palace">
+      <div class="tour-info">
+        <div class="tour-title">Khách sạn Indochine Palace</div>
+        <div class="tour-desc">Khách sạn 5 sao sang trọng giữa trung tâm thành phố Huế, có hồ bơi, spa và nhà hàng Âu - Á đẳng cấp.</div>
+        <div class="tour-price">Giá: từ 2.300.000đ/phòng/đêm</div>
+        <a href="luutru-indochine.html" class="tour-btn">Xem chi tiết</a>
+      </div>
+    </div>
+    <!-- Lưu trú 2 -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://media.mia.vn/uploads/blog-du-lich/anhill-boutique-hue-dia-chi-nghi-duong-5-sao-ly-tuong-tai-xu-kinh-ky-15-1657700416.jpg" alt="">
+      <div class="tour-info">
+        <div class="tour-title">Pilgrimage Village Resort</div>
+        <div class="tour-desc">Khu nghỉ dưỡng giữa thiên nhiên yên bình, dịch vụ cao cấp, lý tưởng để thư giãn và tận hưởng.</div>
+        <div class="tour-price">Giá: từ 2.800.000đ/phòng/đêm</div>
+        <a href="luutru-pilgrimage.html" class="tour-btn">Xem chi tiết</a>
+      </div>
+    </div>
+    <!-- Lưu trú 3 -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/df/19/da/anhill-boutique.jpg?w=1200&h=-1&s=1" alt="">
+      <div class="tour-info">
+        <div class="tour-title">Homestay ven sông Hương</div>
+        <div class="tour-desc">Không gian gần gũi, view sông Hương tuyệt đẹp, phù hợp cho cặp đôi hoặc nhóm bạn trẻ.</div>
+        <div class="tour-price">Giá: từ 650.000đ/phòng/đêm</div>
+        <a href="luutru-homestay.html" class="tour-btn">Xem chi tiết</a>
+      </div>
+    </div>
+    <!-- Lưu trú 4 -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://du-lich.chudu24.com/f/m/2105/28/khach-san-sai-gon-morin-hue-3.jpeg?w=1200&h=800" alt="Khách sạn Saigon Morin">
+      <div class="tour-info">
+        <div class="tour-title">Khách sạn Saigon Morin</div>
+        <div class="tour-desc">Khách sạn cổ kính lâu đời nằm trên trục đường Lê Lợi, gần cầu Trường Tiền, phong cách Pháp ấn tượng.</div>
+        <div class="tour-price">Giá: từ 1.800.000đ/phòng/đêm</div>
+        <a href="luutru-morin.html" class="tour-btn">Xem chi tiết</a>
+      </div>
+    </div>
+    <!-- Lưu trú 5 -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://pix8.agoda.net/hotelImages/412/412648/412648_13060809180012724413.jpg?ca=0&ce=1&s=1024x" alt="Moonlight Hotel">
+      <div class="tour-info">
+        <div class="tour-title">Nhà nghỉ Thiên Bình</div>
+        <div class="tour-desc">Nhà nghỉ giá rẻ, tiện nghi cơ bản, gần ga Huế và các điểm tham quan nổi tiếng.</div>
+        <div class="tour-price">Giá: từ 650.000đ/phòng/đêm</div>
+        <a href="luutru-thienbinh.html" class="tour-btn">Xem chi tiết</a>
+      </div>
+    </div>
+    <!-- Lưu trú 6 -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://i.travelapi.com/lodging/90000000/89530000/89528700/89528601/eac7a64c_z.jpg?impolicy=resizecrop&rw=750&ra=fit" alt="Anhill Boutique Huế">
+      <div class="tour-info">
+        <div class="tour-title">Anhill Boutique Huế</div>
+        <div class="tour-desc">Boutique hotel phong cách độc đáo, hồ bơi riêng, view đồi thông tuyệt đẹp, yên tĩnh và riêng tư.</div>
+        <div class="tour-price">Giá: từ 1.600.000đ/phòng/đêm</div>
+        <a href="luutru-anhill.html" class="tour-btn">Xem chi tiết</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

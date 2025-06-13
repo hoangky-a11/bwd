@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Ẩm thực Huế</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f6fa;
+            margin: 0;
+            color: #222;
+        }
+        .navbar {
+            background: #4e54c8;
+            color: #fff;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .navbar .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ul li {
+            margin-left: 25px;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .navbar ul li a:hover {
+            color: #ffd700;
+        }
+        .breadcrumb {
+            font-size: 0.95rem;
+            margin: 20px 0 0 0;
+            padding: 0 30px;
+            color: #666;
+        }
+        .breadcrumb a {
+            color: #4e54c8;
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            margin: 0 6px;
+        }
+        .tour-header {
+            display: flex;
+            flex-wrap: wrap;
+            background: #fff;
+            margin: 30px auto 0 auto;
+            max-width: 1100px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            overflow: hidden;
+        }
+        .tour-header img {
+            width: 100%;
+            max-width: 480px;
+            object-fit: cover;
+            height: 320px;
+        }
+        .tour-info {
+            flex: 1;
+            padding: 30px 32px 30px 32px;
+            min-width: 300px;
+        }
+        .tour-info h1 {
+            margin-top: 0;
+            font-size: 2.1rem;
+            color: #4e54c8;
+        }
+        .tour-info .meta {
+            color: #888;
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+        .tour-info .price {
+            font-size: 1.5rem;
+            color: #e67e22;
+            font-weight: bold;
+            margin: 18px 0 10px 0;
+        }
+        .tour-info .btn-book {
+            background: linear-gradient(90deg, #4e54c8, #8f94fb);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 18px;
+            transition: background 0.2s;
+        }
+        .tour-info .btn-book:hover {
+            background: #ffd700;
+            color: #4e54c8;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 32px;
+        }
+        .section-title {
+            font-size: 1.4rem;
+            color: #4e54c8;
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-weight: bold;
+        }
+        .tour-detail ul,
+        .tour-detail ol {
+            margin: 0 0 18px 24px;
+        }
+        .tour-detail li {
+            margin-bottom: 8px;
+        }
+        .tour-detail p {
+            margin-bottom: 14px;
+        }
+        .booking-form {
+            background: #f5f6fa;
+            border-radius: 10px;
+            padding: 24px;
+            margin-top: 32px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+        }
+        .booking-form h3 {
+            margin-top: 0;
+            color: #4e54c8;
+        }
+        .booking-form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        .booking-form input,
+        .booking-form select {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        .booking-form button {
+            background: linear-gradient(90deg, #4e54c8, #8f94fb);
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 28px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .booking-form button:hover {
+            background: #ffd700;
+            color: #4e54c8;
+        }
+        @media (max-width: 900px) {
+            .tour-header {
+                flex-direction: column;
+            }
+            .tour-header img {
+                max-width: 100%;
+                height: 220px;
+            }
+            .tour-info {
+                padding: 22px;
+            }
+            .container {
+                padding: 18px;
+            }
+        }
+        .footer {
+            background: #4e54c8;
+            color: #fff;
+            padding: 30px 0 15px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+        .footer .social {
+            margin: 10px 0 0 0;
+        }
+        .footer .social a {
+            color: #ffd700;
+            margin: 0 10px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer .social a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Huế Mộng Mơ</div>
+        <ul>
+            <li><a href="index.html" id="btnTrangChu">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li><a href="tour.html">Tour</a></li>
+            <li><a href="diemden.html">Điểm đến</a></li>
+            <li><a href="amthuc.html">Ẩm thực</a></li>
+            <li><a href="lehoi.html">Lễ hội</a></li>
+            <li><a href="luutru.html">Lưu trú</a></li>
+            <li><a href="meodulich.html">Mẹo du lịch</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="lienhe.html">Liên hệ</a></li>       
+        </ul>
+    </div>
+    <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a>
+        <span>&gt;</span>
+        <a href="tour.html">Tour</a>
+        <span>&gt;</span>
+        <span>Ẩm thực Huế</span>
+    </div>
+    <div class="tour-header">
+        <img src="https://cdn3.ivivu.com/2022/09/am-thuc-hue-ivivu-101.jpg" alt="Ẩm thực Huế">
+        <div class="tour-info">
+            <h1>Tour Ẩm thực Huế</h1>
+            <div class="meta">
+                Thời gian: Nửa ngày | Khởi hành: Hàng ngày | Phương tiện: Xe máy/Ô tô
+            </div>
+            <div class="price">
+                Giá chỉ từ: 550.000đ
+            </div>
+            <p>
+                Khám phá tinh hoa ẩm thực Huế qua các món ăn đặc sản như bún bò, bánh bèo, bánh khoái, chè Huế... Trải nghiệm văn hóa ẩm thực độc đáo của cố đô.
+            </p>
+            <button class="btn-book" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+                Đặt vé ngay
+            </button>
+        </div>
+    </div>
+    <div class="container tour-detail">
+        <h2 class="section-title">Lịch trình chi tiết</h2>
+        <ol>
+            <li>Đón khách tại điểm hẹn, giới thiệu về ẩm thực Huế.</li>
+            <li>Tham quan và thưởng thức bún bò Huế tại quán nổi tiếng.</li>
+            <li>Khám phá các món bánh Huế: bánh bèo, bánh khoái, bánh nậm.</li>
+            <li>Thưởng thức chè Huế truyền thống.</li>
+            <li>Trả khách về điểm hẹn. Kết thúc chương trình.</li>
+        </ol>
+
+        <h2 class="section-title">Dịch vụ bao gồm</h2>
+        <ul>
+            <li>Xe máy hoặc ô tô đưa đón theo chương trình.</li>
+            <li>Hướng dẫn viên am hiểu ẩm thực Huế.</li>
+            <li>Vé tham quan, chi phí ăn uống các món trong chương trình.</li>
+            <li>Nước suối.</li>
+            <li>Bảo hiểm du lịch.</li>
+        </ul>
+
+        <h2 class="section-title">Không bao gồm</h2>
+        <ul>
+            <li>Chi phí cá nhân, đồ uống ngoài chương trình.</li>
+            <li>Tiền tip cho hướng dẫn viên, lái xe.</li>
+        </ul>
+
+        <h2 class="section-title">Điều kiện & lưu ý</h2>
+        <ul>
+            <li>Giá áp dụng cho đoàn từ 2 khách trở lên.</li>
+            <li>Trẻ em dưới 5 tuổi miễn phí, từ 5-10 tuổi tính 50% giá tour.</li>
+            <li>Hủy tour trước 3 ngày không mất phí, sau thời gian này mất 50% giá tour.</li>
+        </ul>
+
+        <div class="booking-form" id="booking">
+            <h3>Đặt vé tour</h3>
+            <form>
+                <label for="name">Họ và tên</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+
+                <label for="date">Ngày khởi hành</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="quantity">Số lượng khách</label>
+                <select id="quantity" name="quantity">
+                    <option value="1">1 khách</option>
+                    <option value="2">2 khách</option>
+                    <option value="3">3 khách</option>
+                    <option value="4">4 khách</option>
+                    <option value="5">5 khách</option>
+                    <option value="6">6 khách</option>
+                    <option value="7">7 khách</option>
+                    <option value="8">8 khách</option>
+                    <option value="9">9 khách</option>
+                    <option value="10">10 khách</option>
+                </select>
+
+                <button type="submit">Gửi đăng ký</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <div>© 2024 Huế Mộng Mơ</div>
+        <div class="social">
+            <a href="https://www.facebook.com/huy.ki.99?locale=vi_VN" title="Facebook"><span>🌐</span></a>
+            <a href="https://www.instagram.com/kiikii_996/" title="Instagram"><span>📸</span></a>
+        </div>
+    </div>
+</body>
+</html>

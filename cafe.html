@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List coffe shop</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f6fa;
+            margin: 0;
+            color: #222;
+        }
+        .navbar {
+            background: #4e54c8;
+            color: #fff;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .navbar .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ul li {
+            margin-left: 25px;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .navbar ul li a:hover {
+            color: #ffd700;
+        }
+        .breadcrumb {
+            font-size: 0.95rem;
+            margin: 20px 0 0 0;
+            padding: 0 30px;
+            color: #666;
+        }
+        .breadcrumb a {
+            color: #4e54c8;
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            margin: 0 6px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 30px auto 0 auto;
+            padding: 0 20px 40px 20px;
+        }
+        .section-title {
+            font-size: 2.1rem;
+            color: #4e54c8;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .dest-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+        .dest-item {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            overflow: hidden;
+            flex: 1 1 320px;
+            min-width: 320px;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+        .dest-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .dest-content {
+            padding: 22px 24px 18px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .dest-content h2 {
+            margin: 0 0 12px 0;
+            color: #4e54c8;
+            font-size: 1.3rem;
+        }
+        .dest-content p {
+            margin: 0 0 10px 0;
+            color: #444;
+            font-size: 1rem;
+        }
+        @media (max-width: 900px) {
+            .dest-list {
+                flex-direction: column;
+                gap: 24px;
+            }
+            .dest-item {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Huế Mộng Mơ</div>
+        <ul>
+            <li><a href="index.html" id="btnTrangChu">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li><a href="tour.html">Tour</a></li>
+            <li><a href="diemden.html">Điểm đến</a></li>
+            <li><a href="amthuc.html">Ẩm thực</a></li>
+            <li><a href="lehoi.html">Lễ hội</a></li>
+             <li><a href="cafe.html">Coffe</a></li>
+            <li><a href="luutru.html">Lưu trú</a></li>
+            <li><a href="meodulich.html">Mẹo du lịch</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="lienhe.html">Liên hệ</a></li>
+        </ul>
+    </nav>
+    <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a>
+        <span>&gt;</span>
+        <span>Cafe</span>
+    </div>
+    <div class="container">
+        <div class="section-title">Cafe shop ở Huế </div>
+        <div class="dest-list">
+            <div class="dest-item">
+                <img src="https://toplist.vn/images/800px/ta-coffee-amp-bakery-1054739.jpg" alt="TA Coffee & Bakery">
+                <div class="dest-content">
+                    <h2>TA Coffee & Bakery</h2>
+                    <p>
+           TA Coffee & Bakery là quán cafe nhỏ nhưng cùng cách bài trí tinh tế vẫn mang lại cho du khách sự thoải mái và bình yên. TA Coffee & Bakery được yêu thích bởi chính phong cách kiến trúc nhã nhặn, tông màu trầm phối cùng nội thất tươi sáng.
+
+
+                    </p>
+                    <a href="tacoffe.html" class="bbh">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="dest-item">
+                <img src="https://th.bing.com/th/id/R.c1000ba56963da33518be627b0e6a474?rik=NBsP1SgkFku99w&pid=ImgRaw&r=0" alt="Cộng Coffee">
+                <div class="dest-content">
+                    <h2>Cộng Coffe</h2>
+                    <p>
+                       Nhẹ nhàng và lịch thiệp. Phù hợp với những người thích phong cách nhẹ nhàng với không gian được hòa mình vào thiên nhiên cây cối xanh tươi đem lại một làn gió mới cho du khách.
+
+
+                    </p>
+                    <a href="cong.html" class="bbh">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="dest-item">
+                <img src="https://thanhphohue.net/wp-content/uploads/2024/03/de_po_cafe_10.jpg" alt="DE PO Coffee">
+                <div class="dest-content">
+                    <h2>DE PO Coffe</h2>
+                    <p>
+                       Đề-Pô Cafe là một điểm đến lý tưởng tại thành phố Huế, nơi mang lại cho khách hàng không chỉ là một ly cà phê ngon mà còn là một hành trình qua quá khứ đầy cảm xúc.
+                    </p>
+                      <a href="deppo.html" class="bbh">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="dest-item">
+                <img src="https://top9antuonghue.sgtiepthi.vn/wp-content/uploads/2024/08/Anh-DeChill-6.jpg" alt="DECHill Coffee">
+                <div class="dest-content">
+                    <h2>DECHILL Coffe</h2>
+                    <p>
+                    DeChill – Tiệm cà phê “chill” bên đồi Vọng Cảnh Nằm nép mình trên đồi Vọng Cảnh, của thành phố Huế, Tiệm Cà Phê DeChill nằm trong không gian xanh mướt, lý tưởng để thư giãn và “check in” lưu giữ kỉ niệm.
+                    </p>
+                     <a href="dechill.html" class="bbh">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="dest-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6StRlS8XV2XuQr_p0zwKt1Vum_GCWb9Xtyw&s" alt="Ant Coffe">
+                <div class="dest-content">
+                    <h2>Ant Coffe</h2>
+                    <p>
+                     Tiệm cafe mang phóng cách ghibli với những góc check-in xinh xắn và là một khu vườn để sống ảo, rất phù hợp với các bạn quý bửu.
+                    </p>
+                    <a href="ant.html" class="bbh">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="dest-item">
+                <img src="https://images.adsttc.com/media/images/672e/3d98/3dfd/b421/7e35/c1b9/large_jpg/tan-coffee-son-studio_6.jpg?1731083682" alt="">
+                <div class="dest-content">
+                    <h2>TAN COFFE</h2>
+                    <p>
+                    tan. là một thương hiệu cà phê tại Huế, Việt Nam được sáng lập vào năm 2017. Khởi đầu là một quán cà phê mang không khí hoài cổ, tan.original nằm nép mình ở 14 Phạm Hồng Thái.
+                  </P>
+                    <a href="tan.html" class="bbh">Xem chi tiết</a> 
+                </div>
+            </div> 
+        </div>
+    </div>
+</body>
+</html>

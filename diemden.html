@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Các điểm đến nổi bật ở Huế</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f6fa;
+            margin: 0;
+            color: #222;
+        }
+        .navbar {
+            background: #4e54c8;
+            color: #fff;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .navbar .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ul li {
+            margin-left: 25px;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .navbar ul li a:hover {
+            color: #ffd700;
+        }
+        .breadcrumb {
+            font-size: 0.95rem;
+            margin: 20px 0 0 0;
+            padding: 0 30px;
+            color: #666;
+        }
+        .breadcrumb a {
+            color: #4e54c8;
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            margin: 0 6px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 30px auto 0 auto;
+            padding: 0 20px 40px 20px;
+        }
+        .section-title {
+            font-size: 2.1rem;
+            color: #4e54c8;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .dest-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+        .dest-item {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            overflow: hidden;
+            flex: 1 1 320px;
+            min-width: 320px;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+        .dest-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .dest-content {
+            padding: 22px 24px 18px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .dest-content h2 {
+            margin: 0 0 12px 0;
+            color: #4e54c8;
+            font-size: 1.3rem;
+        }
+        .dest-content p {
+            margin: 0 0 10px 0;
+            color: #444;
+            font-size: 1rem;
+        }
+        @media (max-width: 900px) {
+            .dest-list {
+                flex-direction: column;
+                gap: 24px;
+            }
+            .dest-item {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Huế Mộng Mơ</div>
+        <ul>
+            <li><a href="index.html" id="btnTrangChu">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li><a href="tour.html">Tour</a></li>
+            <li><a href="diemden.html">Điểm đến</a></li>
+            <li><a href="amthuc.html">Ẩm thực</a></li>
+            <li><a href="lehoi.html">Lễ hội</a></li>
+            <li><a href="luutru.html">Lưu trú</a></li>
+            <li><a href="meodulich.html">Mẹo du lịch</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="lienhe.html">Liên hệ</a></li>
+        </ul>
+    </nav>
+    <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a>
+        <span>&gt;</span>
+        <span>Điểm đến</span>
+    </div>
+    <div class="container">
+        <div class="section-title">Các điểm đến nổi bật ở Huế</div>
+        <div class="dest-list">
+            <div class="dest-item">
+                <img src="https://mia.vn/media/uploads/blog-du-lich/kinh-thanh-hue-chiem-nguong-kien-truc-vang-son-cua-13-vi-vua-trieu-dai-nha-nguyen-01-1638156842.jpg" alt="Kinh thành Huế">
+                <div class="dest-content">
+                    <h2>Kinh thành Huế</h2>
+                    <p>
+                        Kinh thành Huế là di tích lịch sử nổi bật, từng là trung tâm chính trị, văn hóa của triều Nguyễn. Được UNESCO công nhận là Di sản Văn hóa Thế giới, nơi đây thu hút du khách bởi kiến trúc cổ kính, cung điện nguy nga và bề dày lịch sử.
+                    </p>
+                    <a href="kinhthanhhue.html" class="bbh">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="dest-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmQlVupoVF6ZmA2V_hG5nNxQ2o-gvLXcR9cg&s" alt="Chùa Thiên Mụ">
+                <div class="dest-content">
+                    <h2>Chùa Thiên Mụ</h2>
+                    <p>
+                        Chùa Thiên Mụ nằm bên dòng sông Hương thơ mộng, nổi bật với tháp Phước Duyên 7 tầng. Đây là biểu tượng tâm linh của Huế, thu hút đông đảo du khách và phật tử đến tham quan, chiêm bái.
+                    </p>
+                    <a href="chuathienmu.html" class="bbh">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="dest-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDj3-x23S_Aq3dgrM2Rew8QAno2veOWi9Zkg&s" alt="Lăng Tự Đức">
+                <div class="dest-content">
+                    <h2>Lăng Tự Đức</h2>
+                    <p>
+                        Lăng Tự Đức là một trong những lăng tẩm đẹp nhất của các vua triều Nguyễn, nổi bật với kiến trúc hài hòa giữa thiên nhiên và con người. Không gian yên bình, thơ mộng, là điểm đến lý tưởng cho những ai yêu thích lịch sử và nghệ thuật.
+                    </p>
+                      <a href="langtuduc.html" class="bbh">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="dest-item">
+                <img src="https://disantrangan.vn/wp-content/uploads/2021/11/lang_khai_dinh_hue_06.jpg" alt="Lăng Khải Định">
+                <div class="dest-content">
+                    <h2>Lăng Khải Định</h2>
+                    <p>
+                        Lăng Khải Định gây ấn tượng với sự kết hợp độc đáo giữa kiến trúc Á – Âu, trang trí tinh xảo, cầu kỳ. Đây là một trong những công trình lăng tẩm nổi bật nhất ở Huế, thu hút đông đảo du khách trong và ngoài nước.
+                    </p>
+                     <a href="langkhaidinh.html" class="bbh">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="dest-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6StRlS8XV2XuQr_p0zwKt1Vum_GCWb9Xtyw&s" alt="Phá Tam Giang">
+                <div class="dest-content">
+                    <h2>Phá Tam Giang</h2>
+                    <p>
+                        Phá Tam Giang là hệ đầm phá lớn nhất Đông Nam Á, nổi tiếng với cảnh hoàng hôn tuyệt đẹp, hệ sinh thái đa dạng và trải nghiệm cuộc sống làng chài độc đáo. Đây là điểm đến lý tưởng cho những ai yêu thiên nhiên và thích khám phá.
+                    </p>
+                    <a href="tamgiang.html" class="bbh">Xem chi tiết</a>
+                </div>
+            </div>
+            <div class="dest-item">
+                <img src="https://dulichconvoi.com/wp-content/uploads/2019/05/bi%E1%BB%83n-l%C4%83ng-c%C3%B4-hu%E1%BA%BF.jpg" alt="Vịnh Lăng Cô">
+                <div class="dest-content">
+                    <h2>Vịnh Lăng Cô</h2>
+                    <p>
+                        Vịnh Lăng Cô được mệnh danh là một trong những vịnh biển đẹp nhất thế giới, với bãi cát trắng mịn, nước biển trong xanh và khung cảnh thiên nhiên hùng vĩ. Đây là nơi lý tưởng để nghỉ dưỡng, tắm biển và thưởng thức hải sản tươi ngon.
+                    </p>
+                    <a href="langco.html" class="bbh">Xem chi tiết</a> 
+                </div>
+            </div> 
+        </div>
+    </div>
+</body>
+</html>
